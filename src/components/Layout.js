@@ -1,32 +1,30 @@
 import { NavLink, Outlet } from 'react-router-dom';
 
-const SharedLayout = () => {
+const Layout = () => {
   return (
     <>
       <header className={'header'}>
         <nav>
-          <ul className={'navlist'}>
-            <li className={'navItem'}>
-              <NavLink to="/" className={'navlink'}>
-                Home
-              </NavLink>
+          <ul>
+            <li>
+              <NavLink to="/">Home</NavLink>
             </li>
-            <li className={'navItem'}>
-              <NavLink to="/movies" className={'navlink'}>
-                Movies
-              </NavLink>
+            <li>
+              <NavLink to="/movies">Movies</NavLink>
             </li>
           </ul>
         </nav>
       </header>
       <main>
-        <Suspense fallback={<div>Loading...</div>}>
-          <Outlet />
-        </Suspense>
+        <Outlet />
       </main>
-      <footer></footer>
+      <footer>
+        <>
+          <p>Footer text</p>
+        </>
+      </footer>
     </>
   );
 };
 
-export default SharedLayout;
+export default Layout;
