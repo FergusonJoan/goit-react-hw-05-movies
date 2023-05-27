@@ -1,12 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { useParams, Outlet, Link, useLocation } from 'react-router-dom';
-import { DetailsContainer, ListElem } from './MovieDetails.styled';
+import { DetailsContainer, ElemLink, ListElem } from './MovieDetails.styled';
 import api from 'services/movies-api';
 
 import toast, { Toaster } from 'react-hot-toast';
 import { Loader } from 'components/Loader/Loader';
 import { MovieInfo } from 'components/MovieInfo/MovieInfo';
-import { NavLink } from 'components/Layout/Layout.styled';
 
 import { GoBackLink, List } from './MovieDetails.styled';
 
@@ -68,10 +67,10 @@ const MoviesDetails = () => {
       {movieInfo && <MovieInfo movieInfo={movieInfo} />}
       <List>
         <li>
-          <NavLink to="cast">Cast</NavLink>
+          <ElemLink to="cast">Cast</ElemLink>
         </li>
         <li>
-          <NavLink to="reviews">Reviews</NavLink>
+          <ElemLink to="reviews">Reviews</ElemLink>
         </li>
       </List>
       <Outlet />

@@ -16,3 +16,7 @@ export const IsHidden = styled.h1`
   clip: rect(0 0 0 0);
   overflow: hidden;
 `;
+
+export const MoviesInfoContainer = styled.div`
+  display: flex;
+`;

@@ -26,7 +26,7 @@ export const DetailsContainer = styled.div`
   padding: 80px 24px;
 `;
 
-export const List = styled(NavLink)`
+export const List = styled.ul`
   display: flex;
   align-items: center;
   gap: 16px;
@@ -35,5 +35,20 @@ export const List = styled(NavLink)`
   color: inherit;
   font-size: 24px;
   margin: 0;
+  margin-top: 40px;
   padding: 0;
+`;
+
+export const ElemLink = styled(NavLink)`
+  border: 1px solid gray;
+  border-radius: 8px;
+  background-color: white;
+  padding: 3px 8px;
+  text-decoration: none;
+  font-size: 24px;
+  color: black;
+  &:active,
+  &:focus {
+    color: green;
+  }
 `;

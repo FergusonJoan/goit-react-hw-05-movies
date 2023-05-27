@@ -1,5 +1,6 @@
 import api from 'services/movies-api';
 import { InfoContainer } from './MovieInfo.styled';
+import { MoviesInfoContainer } from 'pages/Movies/Movies.styled';
 
 export const MovieInfo = ({ movieInfo }) => {
   const { title, release_date, vote_average, overview, genres, poster_path } =
@@ -14,7 +15,7 @@ export const MovieInfo = ({ movieInfo }) => {
   const posterUrl = api.getPoster(poster_path);
 
   return (
-    <div style={{ display: 'flex' }}>
+    <MoviesInfoContainer>
       <div>
         <img src={posterUrl} alt={title} />
       </div>
@@ -28,6 +29,6 @@ export const MovieInfo = ({ movieInfo }) => {
         <h3>Genres</h3>
         <p>{normalizedGenres}</p>
       </InfoContainer>
-    </div>
+    </MoviesInfoContainer>
   );
 };

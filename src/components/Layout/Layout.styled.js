@@ -11,16 +11,12 @@ export const Header = styled.header`
   box-shadow: 0px 1px 10px 2px #414141;
 `;
 
-export const Nav = styled.nav`
-  display: flex;
-  gap: 8px;
-`;
-
 export const NavList = styled.nav`
   display: flex;
   gap: 8px;
   list-style: none;
   align-items: center;
+  justify-content: center;
   padding: 14px 0;
 `;
 
@@ -28,6 +24,7 @@ export const NavLink = styled(N)`
   text-decoration: none;
   font-size: 24px;
   padding: 16px;
+  color: gray;
   &.active {
     color: green;
   }

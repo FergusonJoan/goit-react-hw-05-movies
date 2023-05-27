@@ -1,6 +1,6 @@
 import { useSearchParams } from 'react-router-dom';
 import { Button, Input } from './SearchBar.styled';
-import { Route } from 'react-router-dom';
+import { IoFootstepsOutline } from 'react-icons/io5';
 
 export const SearchBar = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -23,7 +23,9 @@ export const SearchBar = () => {
       <label>
         <Input type="text" name="query" defaultChecked={query} />
       </label>
-      <Button type="submit">Search</Button>
+      <Button type="submit">
+        <IoFootstepsOutline />
+      </Button>
     </form>
   );
 };

@@ -5,16 +5,14 @@ const Layout = () => {
   return (
     <>
       <Header className={'header'}>
-        <Nav>
-          <NavList>
-            <li>
-              <NavLink to="/">Home</NavLink>
-            </li>
-            <li>
-              <NavLink to="/movies">Movies</NavLink>
-            </li>
-          </NavList>
-        </Nav>
+        <NavList>
+          <li>
+            <NavLink to="/">Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="/movies">Movies</NavLink>
+          </li>
+        </NavList>
       </Header>
       <main>
         <Outlet />

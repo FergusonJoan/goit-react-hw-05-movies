@@ -51,11 +51,8 @@ export const Cast = () => {
         <List>
           {actors.map(({ id, name, poster }) => (
             <li key={id}>
-              <img
-                src={poster}
-                alt={name}
-                style={{ maxWidth: '150px', marginBottom: '10px' }}
-              />
+              <img src={poster} alt={name} style={{ width: '150px' }} />
+              <p>{name}</p>
             </li>
           ))}
         </List>

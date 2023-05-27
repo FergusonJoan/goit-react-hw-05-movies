@@ -6,6 +6,6 @@ export const HomeContainer = styled.div`
 
 export const HomeTitle = styled.h1`
   font-weight: 500;
-  color: violet;
+  color: green;
   margin: 0;
 `;
