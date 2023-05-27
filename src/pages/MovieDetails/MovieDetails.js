@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useParams, Outlet, useLocation } from 'react-router-dom';
-import { DetailsContainer, ElemLink, ListElem } from './MovieDetails.styled';
+import { DetailsContainer, ElemLink } from './MovieDetails.styled';
 import api from 'services/movies-api';
 
 import toast, { Toaster } from 'react-hot-toast';
