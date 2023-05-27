@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { NavLink, Header, Nav, NavList } from './Layout.styled';
+import { NavLink, Header, NavList } from './Layout.styled';
 
 const Layout = () => {
   return (

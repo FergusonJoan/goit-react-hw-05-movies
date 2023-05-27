@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { useParams, Outlet, Link, useLocation } from 'react-router-dom';
+import { useParams, Outlet, useLocation } from 'react-router-dom';
 import { DetailsContainer, ElemLink, ListElem } from './MovieDetails.styled';
 import api from 'services/movies-api';
 
