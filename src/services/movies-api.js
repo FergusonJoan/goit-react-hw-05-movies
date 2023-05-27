@@ -1,16 +1,33 @@
+import noPoster from 'images/no_poster.png';
+
 const KEY_API = '8055d509f234cecd19af4321cc230e55';
+
+const POSTER_BASE_URL = 'https://image.tmdb.org/t/p/w300';
 
 function fetchPopularMovies() {
   return fetch(
     `https://api.themoviedb.org/3/trending/movie/day?api_key=${KEY_API}`
-  ).then(res => {
-    if (res.ok) {
-      return res.json();
+  ).then(response => {
+    if (response.ok) {
+      return response.json();
     }
 
     return Promise.reject(new Error('Error'));
   });
 }
+
+// example with async await
+// async function fetchPopularMovies2() {
+//   const response = await fetch(
+//     `https://api.themoviedb.org/3/trending/movie/day?api_key=${KEY_API}`
+//   );
+
+//   if (response.ok) {
+//     return await response.json();
+//   }
+
+//   return Promise.reject(new Error('Error'));
+// }
 
 function fetchSearchMovies(search) {
   return fetch(
@@ -60,12 +77,17 @@ function fetchReviewsMovies(id) {
   });
 }
 
+function getPoster(url) {
+  return url ? `${POSTER_BASE_URL}${url}` : noPoster;
+}
+
 const api = {
   fetchPopularMovies,
   fetchSearchMovies,
   fetchFullDataMovie,
   fetchCreditsMovies,
   fetchReviewsMovies,
+  getPoster,
 };
 
 export default api;

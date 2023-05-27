@@ -1,28 +1,22 @@
 import { useEffect, useState } from 'react';
-import toast, { Toaster } from 'react-hot-toast';
-import { SearchBar } from 'components/Searchbar/SearchBar';
-import { useSearchParams } from 'react-router-dom';
 import api from 'services/movies-api';
+import { HomeContainer, HomeTitle } from './Home.styled';
 
+import toast, { Toaster } from 'react-hot-toast';
 import { Loader } from 'components/Loader/Loader';
-import { IsHidden, MoviesContainer } from './Movies.styled';
 import MoviesList from 'components/MoviesList/MoviesList';
 
-const Movies = () => {
-  const [searchParams] = useSearchParams();
+const Home = () => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const query = searchParams.get('q');
-
   useEffect(() => {
-    if (query === null) return;
     const asyncWrapper = async () => {
       try {
         setIsLoading(true);
         setError(null);
-        const data = await api.fetchSearchMovies(query);
+        const data = await api.fetchPopularMovies();
 
         const movies = data.results.map(({ id, original_title, title }) => {
           return { id, original_title, title };
@@ -37,7 +31,7 @@ const Movies = () => {
     };
 
     asyncWrapper();
-  }, [query]);
+  }, []);
 
   useEffect(() => {
     if (error === null) return;
@@ -46,14 +40,10 @@ const Movies = () => {
 
   return (
     <>
-      <section>
-        <MoviesContainer>
-          <IsHidden>Search movies</IsHidden>
-          {/* FORM */}
-          <SearchBar />
-          {movies.length > 0 && <MoviesList movies={movies} />}
-        </MoviesContainer>
-      </section>
+      <HomeContainer>
+        <HomeTitle>Trending movies</HomeTitle>
+        <MoviesList movies={movies} />
+      </HomeContainer>
 
       {isLoading && <Loader />}
       <Toaster />
@@ -61,4 +51,4 @@ const Movies = () => {
   );
 };
 
-export default Movies;
+export default Home;
